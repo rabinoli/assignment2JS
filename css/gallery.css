@@ -1,56 +1,94 @@
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 20px;
-    background-color: #f4f4f4;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  background-color: #eaeef3; /* Softer background for better contrast */
+  color: #333;
+  margin: 0;
+  padding: 0;
+  text-align: center;
 }
 
 h1 {
-    text-align: center;
-    color: #333;
+  margin-top: 20px;
+  font-size: 2.5em;
+  color: #2c3e50; /* Darker shade for better visibility */
+  letter-spacing: 1px;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
 }
 
 #gallery {
-    max-width: 1200px;
-    margin: 0 auto;
-    background: #fff;
-    padding: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 90%;
+  max-width: 1200px;
+  margin: 40px auto; /* Center the gallery with some top/bottom spacing */
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
-figure {
-    text-align: center;
+#gallery figure {
+  position: relative;
+  margin-bottom: 20px;
+  overflow: hidden;
+  border-radius: 15px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  transition: transform 0.4s ease;
 }
 
-figure img {
-    max-width: 100%;
-    height: auto;
-    border: 2px solid #ddd;
+#gallery img#full-image {
+  width: 100%;
+  height: auto;
+  border-radius: 15px;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
-figcaption {
-    font-size: 1.2em;
-    margin-top: 10px;
-    color: #666;
+#gallery figcaption {
+  font-size: 1.2em;
+  color: #666;
+  margin-top: 10px;
+  font-style: italic;
 }
 
-ul {
-    list-style: none;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+#gallery ul {
+  display: flex;
+  flex-wrap: wrap; /* Allows wrapping on smaller screens */
+  justify-content: center;
+  gap: 15px;
+  list-style: none;
+  padding: 0;
 }
 
-ul li {
-    margin: 5px;
+#gallery ul li {
+  cursor: pointer;
+  transition: transform 0.3s, filter 0.3s;
+  border-radius: 10px;
 }
 
-.thumbnail {
-    cursor: pointer;
-    transition: transform 0.2s;
+#gallery ul li:hover {
+  transform: scale(1.1);
+  filter: brightness(1.2);
 }
 
-.thumbnail:hover {
-    transform: scale(1.1);
+#gallery ul img {
+  width: 240px;
+  height: 160px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+#gallery ul img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
+}
+
+/* Additional Media Query for Responsiveness */
+@media (max-width: 768px) {
+  #gallery ul img {
+    width: 180px;
+    height: 120px;
+  }
+
+  h1 {
+    font-size: 2em;
+  }
 }
